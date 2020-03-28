@@ -1,14 +1,11 @@
 language: ruby
 
 rvm:
-  - 2.4.9
-  - 2.3.8
+  - 2.5.7
 
 env:
   - DB=postgresql BUILD_TYPE=cucumber
-  - DB=mysql BUILD_TYPE=cucumber
   - DB=postgresql BUILD_TYPE=other
-  - DB=mysql BUILD_TYPE=other
 
 sudo: false
 cache:
@@ -19,7 +16,7 @@ cache:
 
 addons:
   apt:
-    packages: 
+    packages:
       - libidn11-dev
       - ghostscript
 
