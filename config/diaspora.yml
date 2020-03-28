@@ -48,7 +48,7 @@ configuration: ## Section
 
     ## URL for a remote Redis (default=localhost).
     ## Don't forget to restrict IP access if you uncomment these!
-    redis: '<%= ENV['REDISTOGO_URL'] %>'
+    redis: "<%= ENV['REDISTOGO_URL'] %>"
     #redis: 'redis://username:password@host:6379/0'
     #redis: 'unix:///tmp/redis.sock'
 
