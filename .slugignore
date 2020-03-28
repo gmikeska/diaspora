@@ -1,6 +1,6 @@
 features
 spec
-tmp
+tmp/*
 log
 public/uploads
 graphics
