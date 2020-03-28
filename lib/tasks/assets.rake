@@ -30,7 +30,7 @@ namespace :assets do
 
   # Augment precompile with error page generation
   task :precompile do
-    Rake::Task["assets:generate_error_pages"].invoke
-    Rake::Task["assets:non_digest_assets"].invoke
+    # Rake::Task["assets:generate_error_pages"].invoke
+    # Rake::Task["assets:non_digest_assets"].invoke
   end
 end
