@@ -111,7 +111,7 @@ configuration: ## Section
     ## to handle uploaded pictures (disabled by default).
     s3: ## Section
 
-      #enable: true
+      enable: true
       #key: 'change_me'
       #secret: 'change_me'
       #bucket: 'my_photos'
