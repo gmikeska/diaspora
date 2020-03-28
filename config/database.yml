@@ -43,7 +43,7 @@ test:
   database: diaspora_test
 production:
   <<: *combined
-  url: <%= ENV['DATABASE_URL'] %>
+  url: "<%= ENV['DATABASE_URL'] %>"
 
 integration1:
   <<: *combined
