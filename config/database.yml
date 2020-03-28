@@ -4,12 +4,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-development:
-  <<: *default
-  url: postgres://diaspora:diaspora@localhost:5432/diaspora_dev
-test:
-  <<: *default
-  url: postgres://diaspora:diaspora@localhost:5432/diaspora_test
-# production:
+# development:
 #   <<: *default
-#   url: "<%= ENV['DATABASE_URL'] %>"
+#   url: postgres://diaspora:diaspora@localhost:5432/diaspora_dev
+# test:
+#   <<: *default
+#   url: postgres://diaspora:diaspora@localhost:5432/diaspora_test
+production:
+  <<: *default
+  url: "<%= ENV['DATABASE_URL'] %>"
