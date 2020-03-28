@@ -355,7 +355,7 @@ configuration: ## Section
 
     ## Pod name (default="diaspora*")
     ## The pod name displayed in various locations, including the header.
-    #pod_name: "diaspora*"
+    #pod_name: "The Harvest Network"
 
     ## Allow registrations (default=true)
     ## Set this to false to prevent people from signing up to your pod
