@@ -21,6 +21,10 @@ You don't have to install diaspora\* to use the network. There are many servers 
 
 Want to own your data and install diaspora\*? Whether you just want to try it out, want to install it on your server or want to contribute and need a development setup, our [installation guides](https://wiki.diasporafoundation.org/Installation) will get you started!
 
+## Dev Prerequisites
+https://wiki.diasporafoundation.org/Installation/Ubuntu/Xenial
+For other platforms:https://wiki.diasporafoundation.org/Category:Podmin
+
 ## Questions?
 
 Have a look at our FAQs [for users](https://wiki.diasporafoundation.org/FAQ_for_users), [for pod administrators](https://wiki.diasporafoundation.org/FAQ_for_pod_maintainers) or [for developers](https://wiki.diasporafoundation.org/FAQ_for_developers).
