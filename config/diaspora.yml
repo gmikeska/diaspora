@@ -500,7 +500,7 @@ configuration: ## Section
     terms: ## Section
 
       ## First enable it by uncommenting below.
-      #enable: true
+      enable: true
 
       ## Important! If you enable the terms, you should always
       ## set a location under which laws any disputes are governed
@@ -508,12 +508,12 @@ configuration: ## Section
       ## on the country in question.
       ## If this is not set, the whole paragraph about governing
       ## laws *is not shown* in the terms page.
-      #jurisdiction: ""
+      jurisdiction: "Texas, United States"
 
       ## Age limit for signups.
       ## Set a number to activate this setting. This age limit is shown
       ## in the default ToS document.
-      #minimum_age: false
+      minimum_age: 13
 
     ## Maintenance
     ## Various pod maintenance related settings are controlled from here.
@@ -665,10 +665,10 @@ configuration: ## Section
     ## This doesn't make the user an admin but is used when a generic
     ## admin contact is needed, much like the postmaster role in mail
     ## systems. Set only the username, NOT the full ID.
-    #account: "podmaster"
+    account: "digitalintaglio"
 
     ## E-mail address to contact the administrator.
-    #podmin_email: 'podmin@example.org'
+    podmin_email: 'digitalintaglio@lavabit.com'
 
   ## Settings related to relays
   relay: ## Section
