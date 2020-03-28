@@ -69,18 +69,18 @@ module Diaspora
     # config.active_record.schema_format = :sql
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
     # Speed up precompile by not loading the environment
     config.assets.initialize_on_precompile = false
 
     # Precompile additional assets.
     # (application.js, application.css, and all non-JS/CSS in the app/assets are already added)
-    config.assets.precompile = %w[
-      color_themes/*/desktop.css
-      color_themes/*/mobile.css
-      manifest.js
-    ]
+    # config.assets.precompile = %w[
+    #   color_themes/*/desktop.css
+    #   color_themes/*/mobile.css
+    #   manifest.js
+    # ]
 
     # See lib/tasks/assets.rake: non_digest_assets
     # config.assets.non_digest_assets = %w(branding/logos/asterisk.png)
