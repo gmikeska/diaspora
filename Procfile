@@ -1,2 +1,2 @@
-web: bin/bundle exec unicorn -c config/unicorn.rb -p $PORT
+web: rails s
 sidekiq: bin/bundle exec sidekiq
