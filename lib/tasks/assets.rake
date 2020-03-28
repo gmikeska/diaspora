@@ -29,8 +29,8 @@ namespace :assets do
   # end
 
   # Augment precompile with error page generation
-  task :precompile do
-    # Rake::Task["assets:generate_error_pages"].invoke
-    # Rake::Task["assets:non_digest_assets"].invoke
-  end
+  # task :precompile do
+  #   # Rake::Task["assets:generate_error_pages"].invoke
+  #   # Rake::Task["assets:non_digest_assets"].invoke
+  # end
 end
