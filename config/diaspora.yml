@@ -48,7 +48,7 @@ configuration: ## Section
 
     ## URL for a remote Redis (default=localhost).
     ## Don't forget to restrict IP access if you uncomment these!
-    #redis: 'redis://example_host'
+    redis: <%= ENV['REDISTOGO_URL'] %>
     #redis: 'redis://username:password@host:6379/0'
     #redis: 'unix:///tmp/redis.sock'
 
@@ -183,7 +183,7 @@ configuration: ## Section
     ## Rails environment (default='development').
     ## The environment in which the server should be started by default.
     ## Change this to 'production' if you wish to run a production environment.
-    #rails_environment: 'development'
+    rails_environment: 'development'
 
     ## Write unicorn stderr and stdout log.
     #stderr_log: 'log/unicorn-stderr.log'
@@ -479,7 +479,7 @@ configuration: ## Section
     ## Changelog URL
     ## URL to the changelog of the diaspora-version your pod is currently running.
     ## If not set an auto-generated url to github is used.
-    #changelog_url: "https://github.com/diaspora/diaspora/blob/master/Changelog.md"
+    changelog_url: "https://github.com/diaspora/diaspora/blob/master/Changelog.md"
 
     ## Default color theme
     ## You can change which color theme is displayed when a user is not signed in
@@ -487,7 +487,7 @@ configuration: ## Section
     ## to enter the name of the theme's folder in "app/assets/stylesheets/color_themes/".
     ## ("original" for the theme in "app/assets/stylesheets/color_themes/original/", for
     ## example).
-    #default_color_theme: "original"
+    default_color_theme: "original"
 
     ## Default meta tags
     ## You can change here the default meta tags content included on the pages of your pod.
@@ -568,7 +568,7 @@ configuration: ## Section
       ## Authentication required to send mail (default='plain').
       ## Use one of 'plain', 'login' or 'cram_md5'. Use 'none'
       ## if server does not support authentication.
-      #authentication: 'plain'
+      authentication: 'plain'
 
       ## Credentials to log in to the SMTP server.
       ## May be necessary if authentication is not 'none'.
