@@ -48,7 +48,7 @@ configuration: ## Section
 
     ## URL for a remote Redis (default=localhost).
     ## Don't forget to restrict IP access if you uncomment these!
-    redis: <%= ENV['REDISTOGO_URL'] %>
+    #redis: 'redis://example_host'
     #redis: 'redis://username:password@host:6379/0'
     #redis: 'unix:///tmp/redis.sock'
 
@@ -183,7 +183,7 @@ configuration: ## Section
     ## Rails environment (default='development').
     ## The environment in which the server should be started by default.
     ## Change this to 'production' if you wish to run a production environment.
-    rails_environment: 'development'
+    #rails_environment: 'development'
 
     ## Write unicorn stderr and stdout log.
     #stderr_log: 'log/unicorn-stderr.log'
@@ -207,6 +207,68 @@ configuration: ## Section
     ## In most cases it is better to
     ## increase environment.sidekiq.concurrency instead!
     #sidekiq_workers: 1
+
+  ## Diaspora has an internal XMPP web-client. If you want to enable the chat
+  ## functionality or want to use a custom XMPP server, then you should edit
+  ## the following configuration.
+  chat: ## Section
+
+    ## Enable the chat service and all its components.
+    ##
+    ## Please make sure that you followed the Installation-Instructions first:
+    ## https://wiki.diasporafoundation.org/Integration/Chat#Installation.2FUpdate
+    #enabled: true
+
+    ## Custom XMPP server configuration goes here.
+    server: ## Section
+
+      ## Use the configuration bridge to prosody (default=true).
+      ## In case you want to run your own server or want to configure
+      ## prosody on your own, you should disable it.
+      #enabled: false
+
+      ## Set the directory in which to look for virtual hosts TLS certificates.
+      #certs: 'config/certs'
+
+      ## XEP-0124 BOSH requests
+      ## The easiest way of avoiding certificate and mixed-content issues
+      ## is to use a proxy, e.g.:
+      ##
+      ## Apache: https://wiki.diasporafoundation.org/Integration/Chat#Apache2
+      ## Nginx: https://wiki.diasporafoundation.org/Integration/Chat#Nginx
+      ##
+      ## If you configured your proxy correctly,
+      ## you should set the proxy option to 'true'
+      bosh: ## Section
+
+        ## If you'd like to use a proxy, you should set the proxy
+        ## option to true, otherwise jsxc always tries to
+        ## connect directly to the port specified below.
+        #proxy: true
+
+        ## Configure the protocol used to access the BOSH endpoint
+        #proto: http
+
+        ## Configure the address that prosody should listen on.
+        #address: '0.0.0.0'
+
+        ## Configure the BOSH port.
+        #port: 5280
+
+        ## Configure the bind endpoint.
+        #bind: '/http-bind'
+
+      ## Specify log behaviour here.
+      log: ## Section
+
+        ## Log file location.
+        #info: 'log/prosody.log'
+
+        ## Error log file location.
+        #error: 'log/prosody.err'
+
+        ## The debug level logs all XML sent and received by the server.
+        #debug: false
 
   ## Displays the location of a post in a map. Per default we are using the map
   ## tiles of the Heidelberg University (http://giscience.uni-hd.de).
@@ -293,7 +355,7 @@ configuration: ## Section
 
     ## Pod name (default="diaspora*")
     ## The pod name displayed in various locations, including the header.
-    pod_name: "Harvest"
+    #pod_name: "diaspora*"
 
     ## Allow registrations (default=true)
     ## Set this to false to prevent people from signing up to your pod
@@ -305,7 +367,7 @@ configuration: ## Section
     ## Users will automatically follow a specified account on creation.
     ## Set this to false if you don't want your users to automatically
     ## follow an account upon creation.
-    autofollow_on_join: true
+    #autofollow_on_join: true
 
     ## Auto-follow account (default='hq@pod.diaspora.software')
     ## The diaspora* HQ account keeps users up to date with news about Diaspora.
@@ -320,18 +382,18 @@ configuration: ## Section
       ## Send a message to new users after registration
       ## to tell them about your pod and how things
       ## are handled on it.
-      enabled: true
+      #enabled: false
 
       ## Welcome Message subject (default='Welcome Message')
       ## The subject of the conversation that is started
       ## by your welcome message.
-      subject: "Welcome to Harvest!"
+      #subject: "Welcome Message"
 
       ## Welcome Message text (default='Hello %{username}, welcome to diaspora.')
       ## The content of your welcome message.
       ## The placeholder "%{username}" will be replaced by the username
       ## of the new user.
-      text: "Greetings, %{username}! Welcome to Harvest. We're a community of Christians who study the Bible together and worship God."
+      #text: "Hello %{username}, welcome to diaspora."
 
     ## Invitation settings
     invitations: ## Section
@@ -369,7 +431,7 @@ configuration: ## Section
     ## Bitcoin donations
     ## You can provide a bitcoin address here to allow your users to provide
     ## donations towards the running of their pod.
-    bitcoin_address: "34HQxQWpL3bdW8ySGwd63cucnXs7HRA4xL"
+    #bitcoin_address: "change_me"
 
     ## Community spotlight (disabled by default)
     ## The community spotlight shows new users public posts from people you
@@ -377,7 +439,7 @@ configuration: ## Section
     ## to the community spotlight add the 'spotlight' role to it.
     community_spotlight: ## Section
 
-      enable: true
+      #enable: true
 
       ## E-mail address to which users can make suggestions about who
       ## should be in the community spotlight (optional).
@@ -479,7 +541,7 @@ configuration: ## Section
     ## Changelog URL
     ## URL to the changelog of the diaspora-version your pod is currently running.
     ## If not set an auto-generated url to github is used.
-    changelog_url: "https://github.com/diaspora/diaspora/blob/master/Changelog.md"
+    #changelog_url: "https://github.com/diaspora/diaspora/blob/master/Changelog.md"
 
     ## Default color theme
     ## You can change which color theme is displayed when a user is not signed in
@@ -487,15 +549,15 @@ configuration: ## Section
     ## to enter the name of the theme's folder in "app/assets/stylesheets/color_themes/".
     ## ("original" for the theme in "app/assets/stylesheets/color_themes/original/", for
     ## example).
-    default_color_theme: "original"
+    #default_color_theme: "original"
 
     ## Default meta tags
     ## You can change here the default meta tags content included on the pages of your pod.
     ## Title will be used for the opengraph og:site_name property while description will be used
     ## for description and og:description.
     default_metas:
-      title: 'The Harvest'
-      description: 'We're a community of Christians who study the Bible together and worship God.'
+      #title: 'diaspora* social network'
+      #description: 'diaspora* is the online social world where you are in control.'
 
     ## CSP (Content Security Policy) header
     ## CSP allows limiting origins from where resources are allowed to be loaded. This
@@ -509,10 +571,10 @@ configuration: ## Section
     ## is blocked by CSP.
     csp:
 
-      ## Report-Only header (default=false)
-      ## By default diaspora* adds a "Content-Security-Policy" header. If you set
-      ## this to true, the "Content-Security-Policy-Report-Only" header is added instead.
-      #report_only: true
+      ## Report-Only header (default=true)
+      ## By default diaspora* adds only a "Content-Security-Policy-Report-Only" header. If you set
+      ## this to false, the "Content-Security-Policy" header is added instead.
+      #report_only: false
 
       ## CSP report URI (default=)
       ## You can set an URI here, where the user agent reports violations as JSON document via a POST request.
@@ -547,14 +609,14 @@ configuration: ## Section
   mail: ## Section
 
     ## First you need to enable it.
-    enable: true
+    #enable: true
 
     ## Sender address used in mail sent by Diaspora.
-    sender_address: 'podmin@harvest-net.herokuapp.com'
+    #sender_address: 'no-reply@example.org'
 
     ## This selects which mailer should be used. Use 'smtp' for a smtp
     ## connection or 'sendmail' to use the sendmail binary.
-    method: 'smtp'
+    #method: 'smtp'
 
     ## Ignore if method isn't 'smtp'.
     smtp: ## Section
@@ -562,30 +624,30 @@ configuration: ## Section
       ## Host and port of the smtp server handling outgoing mail.
       ## This should match the common name of the certificate sent by
       ## the SMTP server, if it sends one. (default port=587)
-      host: <%= ENV['MAILJET_SERVER'] %>
-      port: 587
+      #host: 'smtp.example.org'
+      #port: 587
 
       ## Authentication required to send mail (default='plain').
       ## Use one of 'plain', 'login' or 'cram_md5'. Use 'none'
       ## if server does not support authentication.
-      authentication: 'plain'
+      #authentication: 'plain'
 
       ## Credentials to log in to the SMTP server.
       ## May be necessary if authentication is not 'none'.
-      username: <%= ENV['MAILJET_USERNAME'] %>
-      password: <%= ENV['MAILJET_PASSWORD'] %>
+      #username: 'change_me'
+      #password: 'change_me'
 
       ## Automatically enable TLS (default=true).
       ## Leave this commented out if authentication is set to 'none'.
-      starttls_auto: true
+      #starttls_auto: true
 
       ## The domain for the HELO command, if needed.
-      # domain: 'smtp.example.org'
+      #domain: 'smtp.example.org'
 
       ## OpenSSL verify mode used when connecting to a SMTP server with TLS.
       ## Set this to 'none' if you have a self-signed certificate. Possible
       ## values: 'none', 'peer'.
-      openssl_verify_mode: 'none'
+      #openssl_verify_mode: 'none'
 
     ## Ignore if method isn't 'sendmail'
     sendmail: ## Section
@@ -603,10 +665,10 @@ configuration: ## Section
     ## This doesn't make the user an admin but is used when a generic
     ## admin contact is needed, much like the postmaster role in mail
     ## systems. Set only the username, NOT the full ID.
-    account: "digitalintaglio"
+    #account: "podmaster"
 
     ## E-mail address to contact the administrator.
-    podmin_email: 'digitalintaglio@lavabit.com'
+    #podmin_email: 'podmin@example.org'
 
   ## Settings related to relays
   relay: ## Section
@@ -644,8 +706,8 @@ configuration: ## Section
 ## to have them different in different environments.
 production: ## Section
   environment: ## Section
-    redis: <%= ENV['REDISTOGO_URL'] %>
+    #redis: 'redis://production.example.org:6379'
 
 development: ## Section
   environment: ## Section
-    redis: <%= ENV['REDISTOGO_URL'] %>
+    #redis: 'redis://production.example.org:6379'
