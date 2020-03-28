@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :assets do
-  desc "Generate error pages"
+  # desc "Generate error pages"
   # task :generate_error_pages => :environment do
   #   renderer = ErrorPageRenderer.new codes: [404, 422, 500]
   #   renderer.render
