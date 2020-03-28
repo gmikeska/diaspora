@@ -556,8 +556,8 @@ configuration: ## Section
     ## Title will be used for the opengraph og:site_name property while description will be used
     ## for description and og:description.
     default_metas:
-      #title: 'diaspora* social network'
-      #description: 'diaspora* is the online social world where you are in control.'
+      title: 'The Harvest Network'
+      description: 'Harvest is a community for Christians to study, network and worship God together!'
 
     ## CSP (Content Security Policy) header
     ## CSP allows limiting origins from where resources are allowed to be loaded. This
