@@ -50,7 +50,7 @@ gem "sidekiq-cron", "1.1.0"
 gem "uglifier", "4.2.0"
 
 # Configuration
-
+gem "awesome_print"
 gem "configurate", "0.3.1"
 
 # Cross-origin resource sharing
