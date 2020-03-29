@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
     config.fog_provider = "fog/aws"
     require "carrierwave/storage/fog"
     config.storage = :fog
-    config.cache_dir = "/tmp/uploads"
+    config.cache_dir = "/app/tmp/uploads"
     FileUtils.mkdir_p config.cache_dir
     config.fog_credentials = {
         provider:              'AWS',
