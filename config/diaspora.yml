@@ -122,7 +122,7 @@ configuration: ## Section
       ## one year. This can improve load speed and save requests to the image
       ## host. Set to false to revert to browser defaults (usually less than
       ## one year).
-      #cache : true
+      cache : true
 
     ## Set redirect URL for an external image host (Amazon S3 or other).
     ## If hosting images for your pod on an external server (even your own),
@@ -138,7 +138,7 @@ configuration: ## Section
       #serve: false
 
       ## Upload your assets to S3 (default=false).
-      #upload: false
+      # upload: true
 
       ## Specify an asset host. Ensure it does not have a trailing slash (/).
       #host: http://cdn.example.org/diaspora
