@@ -69,6 +69,7 @@ GEM
     attr_required (1.0.1)
     autoprefixer-rails (8.6.5)
       execjs
+    awesome_print (1.8.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -803,6 +804,7 @@ DEPENDENCIES
   addressable (= 2.7.0)
   asset_sync (= 2.11.0)
   autoprefixer-rails (= 8.6.5)
+  awesome_print
   bootstrap-sass (= 3.4.1)
   bootstrap-switch-rails (= 3.3.3)
   capybara (= 3.15.0)
